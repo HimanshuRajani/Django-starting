@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}
+Start | Home
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{%static 'style_2.css'%}?v=2">
+{% endblock %}
+
+{% block main %}
+<h1>Welcome to home page</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eaque, omnis temporibus fugiat et molestias aliquam exercitationem saepe reiciendis ut obcaecati ab tempora fuga quasi, possimus voluptate necessitatibus cum accusamus.</p>
+
+{% for some in somes %}
+<div class="feed">
+    <img src="{{some.image.url}}" alt=""  class = "h-[350px] w-[350px] m-[20px] border-2 border-solid border-white rounded-3xl" >
+    <h3 class = "text-center text-black bg-amber-200 border-2 border-solid border-white rounded-3xl">name - {{some.name}}</h2>
+    <h4>email id - {{some.email}}</h4>
+    <p>{{some.feedback}} <br>at {{some.date}}</p>
+</div>
+{% comment %} style = "height:350px;width:350px;border-radius:50%;" {% endcomment %}
+{% endfor %}
+
+{% endblock %}
